@@ -10,7 +10,7 @@ with col1:
   a = st.number_input('Enter a Value',value = 10)
 with col2:
   b = st.text_input('Enter a text')
-  c = st.selectbox(label = 'Choose',options = [A,B,C])
+  c = st.selectbox(label = 'Choose',options = [1,2,3])
                                                
 sub = st.button(label = 'Submit')
 
