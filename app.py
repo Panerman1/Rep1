@@ -11,6 +11,7 @@ with col1:
 with col2:
   b = st.text_input('Enter a text')
   c = st.selectbox(label = 'Choose',options = [A,B,C]
+                                               
 sub = st.button(label = 'Submit')
 
 if sub :
