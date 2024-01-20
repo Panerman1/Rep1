@@ -10,10 +10,14 @@ with col1:
   a = st.number_input('Enter a Value',value = 10)
 with col2:
   b = st.text_input('Enter a text')
+  c = st.selectbox(label = 'Choose',options = [A,B,C]
 sub = st.button(label = 'Submit')
 
 if sub :
   st.write(a)
   st.write(b)
+  st.write(c)
+
 print(a)
 print(b)
+print(c)
