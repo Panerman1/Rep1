@@ -11,7 +11,7 @@ chat = model.start_chat(history = [])
 def get_gemini_response(question):
     response = chat.send_message(stream = True)
     return response
-st.set_gemini_response(page_title = "Q&A App")
+st.set_page_config(page_title = "Q&A App")
 st.header("Conversational ChatBot")
 
 st._config("Q&A chatbot") #tab name
