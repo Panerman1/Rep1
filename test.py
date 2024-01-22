@@ -36,8 +36,7 @@ def main():
             else:
                 st.warning("No image found for the given keyword.")
 
-        if __name__ == "__main__":
-            main()
+        
 
         elif selected_option == "Step 2":
             st.write("This is the Settings page. Customize your app here.")
