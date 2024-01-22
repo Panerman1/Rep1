@@ -4,7 +4,7 @@ def main():
     st.title("Streamlit Sidebar Example")
 
     # Create a sidebar with options
-    selected_option = st.sidebar.selectbox("Select an option", ["Home", "Settings", "About"])
+    selected_option = st.sidebar.selectbox("The Inseptinator", ["Home", "Settings", "About"])
 
     # Display content based on the selected option
     if selected_option == "Home":
