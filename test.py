@@ -1,43 +1,52 @@
+import streamlit as st
+import requests
 
-from dotenv import load_dotenv
-load_dotenv()
-import streamlit as st 
-import os
-from PIL import Image
-import google.generativeai as genai
+class GeminiImageLoader:
+    def __init__(self, api_key, endpoint):
+        self.api_key = api_key
+        self.endpoint = endpoint
 
-genai.configure(api_key = os.getenv('GOOGLE_API_KEY'))
-model = genai.GenerativeModel('gemini-pro-vision')
+    def get_image_url(self, keyword):
+        # Make a request to the Gemini API to get the image URL based on the keyword
+        headers = {
+            'Content-Type': 'application/json',
+            'Authorization': f'Bearer {self.api_key}',
+        }
+
+        payload = {
+            'keyword': keyword,
+            # Add any other required parameters for image retrieval
+        }
+
+        response = requests.post(self.endpoint, headers=headers, json=payload)
+
+        if response.status_code == 200:
+            result = response.json()
+            return result.get('image_url')
+        else:
+            st.error(f"Error: {response.status_code}, {response.text}")
+            return None
 
 def main():
-    st.title("Streamlit Sidebar Example")
+    st.title("Gemini Image Viewer")
 
-    # Create a sidebar with options
-    selected_option = st.sidebar.selectbox("Steps", ["Step 1", "Step 2"])
+    # Get Gemini API key and endpoint
+    api_key = 'YOUR_API_KEY'
+    gemini_endpoint = 'YOUR_GEMINI_ENDPOINT'
 
-    # Display content based on the selected option
-    if selected_option == "Step 1":
-        st.title("Gemini Image Viewer")
+    # Create GeminiImageLoader instance
+    gemini_loader = GeminiImageLoader(api_key, gemini_endpoint)
 
+    # Get user input for the keyword
+    keyword = st.text_input("Enter a keyword to search for an image:")
 
-        gemini_endpoint = 'YOUR_GEMINI_ENDPOINT'
+    if keyword:
+        # Load and display the image
+        image_url = gemini_loader.get_image_url(keyword)
+        if image_url:
+            st.image(image_url, caption=f"Image related to '{keyword}'", use_column_width=True)
+        else:
+            st.warning("No image found for the given keyword.")
 
-         # Create GeminiImageLoader instance
-        gemini_loader = GeminiImageLoader(api_key, gemini_endpoint)
-
-        # Get user input for the keyword
-        keyword = st.text_input("Enter a keyword to search for an image:")
-
-        if keyword:
-            # Load and display the image
-            image_url = gemini_loader.get_image_url(keyword)
-            if image_url:
-                st.image(image_url, caption=f"Image related to '{keyword}'", use_column_width=True)
-            else:
-                st.warning("No image found for the given keyword.")
-
-        
-
-        elif selected_option == "Step 2":
-            st.write("This is the Settings page. Customize your app here.")
-main()
+if __name__ == "__main__":
+    main()
