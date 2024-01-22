@@ -24,10 +24,11 @@ st.header('Multilanguage Invoice Extractor')
 input = st.text_input('Input Prompt',key = 'input')
 uploaded_file = st.file_uploader('Image', type = ['jpg','jpeg','png'])
 
+sub = st.button('Tell me about the invoice')
+
 if uploaded_file is not None:
-    image = Image.open()
+    image = Image.open(uploaded_file)
     st.image(image, caption = "Upload File", use_column_width = True)
-    sub = st.button('Tell me about the invoice')
     
 input_prompt =   """BLA BLA BLA....we image as invoice, u answer any question on the image invoice"""
 
