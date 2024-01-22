@@ -1,22 +1,18 @@
 import streamlit as st
 
-def home_page():
-    st.title("Home Page")
-    st.write("Welcome to the Home page!")
-
-def about_page():
-    st.title("About Page")
-    st.write("This is the About page. Learn more about the app here.")
-
 def main():
-    st.sidebar.title("Navigation")
-    pages = st.sidebar.multiselect("Select pages", ["Home", "About"])
+    st.title("Streamlit Sidebar Example")
 
-    if "Home" in pages:
-        home_page()
-    
-    if "About" in pages:
-        about_page()
+    # Create a sidebar with options
+    selected_option = st.sidebar.selectbox("Select an option", ["Home", "Settings", "About"])
+
+    # Display content based on the selected option
+    if selected_option == "Home":
+        st.write("Welcome to the Home page!")
+    elif selected_option == "Settings":
+        st.write("This is the Settings page. Customize your app here.")
+    elif selected_option == "About":
+        st.write("Learn more about this app on the About page.")
 
 if __name__ == "__main__":
     main()
