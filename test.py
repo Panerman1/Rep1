@@ -32,9 +32,9 @@ def main():
             # Load and display the image
             image_url = gemini_loader.get_image_url(keyword)
             if image_url:
-            st.image(image_url, caption=f"Image related to '{keyword}'", use_column_width=True)
+                st.image(image_url, caption=f"Image related to '{keyword}'", use_column_width=True)
             else:
-            st.warning("No image found for the given keyword.")
+                st.warning("No image found for the given keyword.")
 
         if __name__ == "__main__":
             main()
