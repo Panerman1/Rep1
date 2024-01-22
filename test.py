@@ -40,3 +40,4 @@ def main():
 
         elif selected_option == "Step 2":
             st.write("This is the Settings page. Customize your app here.")
+main()
