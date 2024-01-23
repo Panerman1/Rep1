@@ -29,7 +29,7 @@ if uploaded_file not in None:
     st.image(image, caption = "Upload File", use_column_width = True)
     sub = st.button('Tell me about the invoice')
     
-input_prompt =   """BLA BLA BLA....we image as invoice, u answer any question on the image invoice"""
+input_prompt =   """The image provided may or may not have traffic light in it, you have to identify whether the image contains an a traffic light or not"""
 
 if sub:
     with st.spinner('Wait'):
