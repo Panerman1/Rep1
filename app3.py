@@ -30,7 +30,7 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption = "Upload File", use_column_width = True)
     
-input_prompt =   """The image provided may or may not have Waldo (from "Where's Waldo?") in it, you have to identify whether the image contains Waldo or not and if the image contains Waldo, display the image in which a red circle is drawn around Waldo"""
+input_prompt =   """The image provided may or may not have Waldo (from "Where's Waldo?") in it, you have to identify whether the image contains Waldo or not and if the image contains Waldo, display the provided image with a red circle is drawn around Waldo in it"""
 
 if sub:
     with st.spinner('Wait'):
