@@ -22,7 +22,7 @@ def input_image_details(uploaded_file):
         raise FileNotFoundError('No file Uploaded')
 st.header('BASIC GEO-LOCATION DESCRIBER!!!')
 input = st.text_input('Additional questions:',key = 'input')
-uploaded_file = st.file_uploader('Image', type = ['jpg','jpeg','png'])
+uploaded_file = st.file_uploader('Image of the location:', type = ['jpg','jpeg','png'])
 
 sub = st.button('Tell me about this location:')
 
@@ -31,6 +31,7 @@ if uploaded_file is not None:
     st.image(image, caption = "Upload File", use_column_width = True)
     
 input_prompt =   """Under the title -'LOCATION AND BASIC INFO :-' , You have to identify the following :- (the name of the location (if it is a popular location), name of the structure (if it has a name), the state it is located in, country of the place in the image that is provided). Also describe few key features about the location in the image.
+                    display the location on goolgle maps.                
                     After giving the  output , display the title 'ANSWER TO ADDITIONAL QUESTIONS ( If Any) :-' """
 
 if sub:
