@@ -30,7 +30,7 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption = "Upload File", use_column_width = True)
     
-input_prompt =   """Under the title "LOCATION AND BASIC INFO:" , You have to identify the name of the location (if it is a popular location), name of the structure (if it has a name),  state and country of the place in the image that is provided. Also describe few key features about the location in the image. """
+input_prompt =   """Under the title "LOCATION AND BASIC INFO :-" , You have to identify the name of the location (if it is a popular location), name of the structure (if it has a name),  state and country of the place in the image that is provided. Also describe few key features about the location in the image.After this, display the title "Answer to Additional Question( If Any) :-" """
 
 if sub:
     with st.spinner('Wait'):
