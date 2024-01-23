@@ -20,7 +20,7 @@ def input_image_details(uploaded_file):
         return image_parts
     else:
         raise FileNotFoundError('No file Uploaded')
-st.header('BASIC GEO-FORENSICS DEVICE!!')
+st.header('BASIC GEO-LOCATION DESCRIBER!!!')
 input = st.text_input('Additional questions:',key = 'input')
 uploaded_file = st.file_uploader('Image', type = ['jpg','jpeg','png'])
 
