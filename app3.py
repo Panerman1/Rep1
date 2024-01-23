@@ -30,7 +30,7 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption = "Upload File", use_column_width = True)
     
-input_prompt =   """You have to identify the location(state and country) of the place in the image that is provided """
+input_prompt =   """You have to identify the name of the location (if it is a popular location), name of the structure (if it has a name),  state and country of the place in the image that is provided """
 
 if sub:
     with st.spinner('Wait'):
