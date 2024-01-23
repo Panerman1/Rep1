@@ -21,16 +21,16 @@ def input_image_details(uploaded_file):
     else:
         raise FileNotFoundError('No file Uploaded')
 st.header('Multilanguage Invoice Extractor')
-input = st.text_input('Input Prompt',key = 'input')
+input = st.text_input('Additional questions:',key = 'input')
 uploaded_file = st.file_uploader('Image', type = ['jpg','jpeg','png'])
 
-sub = st.button('Tell me about the invoice')
+sub = st.button('Tell me about this location:')
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption = "Upload File", use_column_width = True)
     
-input_prompt =   """You have to identify the name of the location (if it is a popular location), name of the structure (if it has a name),  state and country of the place in the image that is provided """
+input_prompt =   """You have to identify the name of the location (if it is a popular location), name of the structure (if it has a name),  state and country of the place in the image that is provided. Also describe few key features about the location in the image. """
 
 if sub:
     with st.spinner('Wait'):
