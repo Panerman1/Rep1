@@ -36,5 +36,5 @@ if sub:
     with st.spinner('Wait'):
         image_data = input_image_details(uploaded_file)
         response = get_gemini_response(input_prompt,image_data,input)
-        st.header('The response is ')
+        st.header('Most probable answer:')
         st.text_area(label="",value= response,height=500)
