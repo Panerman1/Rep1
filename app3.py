@@ -31,7 +31,7 @@ if uploaded_file is not None:
     st.image(image, caption = "Upload File", use_column_width = True)
     
 input_prompt =   """Under the title -'LOCATION AND BASIC INFO :-' , You have to identify the name of the location (if it is a popular location), name of the structure (if it has a name),  state and country of the place in the image that is provided. Also describe few key features about the location in the image.
-                    After the execution of the before mentioned commands, display the title 'ANSWER TO ADDITIONAL QUESTIONS ( If Any) :-' """
+                    After giving the  output , display the title 'ANSWER TO ADDITIONAL QUESTIONS ( If Any) :-' """
 
 if sub:
     with st.spinner('Wait'):
